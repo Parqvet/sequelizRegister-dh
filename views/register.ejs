@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %> 
+<body>
+    <%- include('partials/header') %> 
+
+    <div class="container">
+      <form action="" method="POST" class="row g-3">
+        <div class="col-md-6">
+          <label for="inputName4" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="inputEmail4" name="name" value="<%= (typeof old != 'undefined' && old.nombre ? old.nombre : null) %>">
+          <span class="text-danger"><%= (typeof errors != 'undefined' && errors.name ? errors.name.msg : null) %> </span>
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputName4" name="email" value="<%= (typeof old != 'undefined' && old.email ? old.email : null) %> ">
+          <span class="text-danger"><%= (typeof errors != 'undefined' && errors.email ? errors.email.msg : null) %> </span>
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="inputPassword4" name="pass">
+          <span class="text-danger"><%= (typeof errors != 'undefined' && errors.pass ? errors.pass.msg : null) %> </span>
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Repetir contraseña</label>
+          <input type="password" class="form-control" id="inputPassword4" name="pass2">
+          <span class="text-danger"><%= (typeof errors != 'undefined' && errors.pass2 ? errors.pass2.msg : null) %> </span>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck" name="bases">
+            <label class="form-check-label" for="gridCheck">
+              Aceptar bases y condiciones
+            </label>
+          </div>
+          <span class="text-danger"><%= (typeof errors != 'undefined' && errors.bases ? errors.bases.msg : null) %> </span>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Registrarse</button>
+        </div>
+      </form>
+    </div>
+
+    <%- include('partials/footer') %> 
+    
+</body>
+</html>
